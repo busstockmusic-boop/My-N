@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://shurik.github.io/my-n/sitemap.xml
+
+Sitemap: https://busstockmusic-boop.github.io/My-N/sitemap.xml
