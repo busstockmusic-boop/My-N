@@ -7,26 +7,75 @@
   <meta name="description" content="88-98 — репозиторий My-N. Два трека и стихи. Доступ по коду 88-98." />
   <meta name="robots" content="index, follow" />
   <style>
-    :root{--bg:#0e1116;--card:rgba(255,255,255,0.03);--text:#e8eef6;--muted:#9aa4b2;--accent:#8bd3ff}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#06070a,#0e1116);color:var(--text);font-family:Inter,Roboto,Arial,sans-serif}
-    .wrap{max-width:900px;margin:48px auto;padding:28px;background:var(--card);border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.6)}
+    :root{
+      --bg:#0e1116;
+      --card:rgba(255,255,255,0.03);
+      --text:#e8eef6;
+      --muted:#9aa4b2;
+      --accent:#8bd3ff;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:linear-gradient(180deg,#06070a,#0e1116);
+      color:var(--text);
+      font-family:Inter,Roboto,Arial,sans-serif;
+    }
+    .wrap{
+      max-width:900px;
+      margin:48px auto;
+      padding:28px;
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:0 10px 35px rgba(0,0,0,.6);
+    }
     h1{margin:0;font-size:30px}
     p.lead{color:var(--muted);margin:6px 0 18px}
     .access{display:flex;gap:8px;align-items:center}
-    input{padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.04);color:inherit;outline:none}
-    button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#031320;font-weight:700;cursor:pointer}
+    input{
+      padding:10px;
+      border-radius:8px;
+      border:0;
+      background:rgba(255,255,255,0.04);
+      color:inherit;
+      outline:none;
+    }
+    button{
+      padding:10px 14px;
+      border-radius:8px;
+      border:0;
+      background:var(--accent);
+      color:#031320;
+      font-weight:700;
+      cursor:pointer;
+    }
     .hidden{display:none}
-    .track{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;margin-bottom:12px}
+    .track{
+      background:rgba(255,255,255,0.02);
+      padding:12px;
+      border-radius:10px;
+      margin-bottom:12px;
+    }
     audio{width:100%;margin-top:8px}
-    .note{white-space:pre-wrap;margin-top:12px;line-height:1.45;color:#e8f3ff}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    .note{
+      white-space:pre-wrap;
+      margin-top:12px;
+      line-height:1.45;
+      color:#e8f3ff;
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header>
       <h1>My-N</h1>
-      <p class="lead">Найти страницу: введите в поиске <strong>88-98</strong>.<br>Для доступа — введите код.</p>
+      <p class="lead">Чтобы найти страницу — введите в поиске <strong>88-98</strong>.<br>Для доступа — введите код.</p>
     </header>
 
     <section id="gate" class="access">
@@ -63,28 +112,28 @@
 
   <script>
     const PASSWORD = "88-98";
-    async function unlock(){
+
+    async function unlock() {
       const v = document.getElementById('code').value.trim();
       const msg = document.getElementById('msg');
-      if(!v){ msg.textContent = 'Введите код.'; return; }
-      if(v !== PASSWORD){ msg.textContent = 'Неверный код.'; return; }
+      if (!v) { msg.textContent = 'Введите код.'; return; }
+      if (v !== PASSWORD) { msg.textContent = 'Неверный код.'; return; }
+
       msg.textContent = 'Доступ открыт.';
-
-      // загружаем стихи из notes.b64
-      try{
-        const r = await fetch('notes.b64', {cache: 'no-cache'});
-        if(!r.ok) throw 0;
-        const b64 = await r.text();
-        const decoded = decodeURIComponent(escape(window.atob(b64)));
-        document.getElementById('notes').textContent = decoded;
-      }catch(e){
-        document.getElementById('notes').textContent = 'Заметки недоступны.';
-      }
-
       document.getElementById('gate').classList.add('hidden');
       const content = document.getElementById('content');
       content.classList.remove('hidden');
       content.removeAttribute('aria-hidden');
+
+      try {
+        const r = await fetch('notes.b64', { cache: 'no-cache' });
+        if (!r.ok) throw new Error('fetch failed');
+        const b64 = await r.text();
+        const decoded = decodeURIComponent(escape(window.atob(b64)));
+        document.getElementById('notes').textContent = decoded;
+      } catch (e) {
+        document.getElementById('notes').textContent = 'Заметки недоступны.';
+      }
     }
   </script>
 </body>
