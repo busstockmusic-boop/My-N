@@ -1,153 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>88-98</title>
-  <style>
-    body {
-      background-color: #0b0b0b;
-      color: #e8e8e8;
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      display: none;
-      line-height: 1.7;
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px 10px;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #fff;
-      margin-bottom: 10px;
-      font-weight: 400;
-    }
-
-    .track {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    audio {
-      width: 80%;
-      max-width: 600px;
-      margin-top: 10px;
-      border-radius: 10px;
-      background-color: #222;
-    }
-
-    .notes {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px 80px;
-      white-space: pre-line;
-      font-size: 1rem;
-    }
-
-    .notes h3 {
-      text-align: center;
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.3em;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #444;
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    footer {
-      text-align: center;
-      color: #666;
-      font-size: 0.9em;
-      padding: 20px;
-    }
-
-    .error {
-      color: white;
-      text-align: center;
-      margin-top: 100px;
-      font-size: 1.3em;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>88-98</title>
+<style>
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 40px;
+  }
+  h1, h2 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+  audio {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    outline: none;
+  }
+  #content {
+    display: none;
+  }
+  #passwordBox {
+    text-align: center;
+    margin-top: 100px;
+  }
+  input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    background: #111;
+    border: 1px solid #555;
+    color: #fff;
+    width: 200px;
+    text-align: center;
+  }
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #222;
+    border: 1px solid #555;
+    color: #fff;
+    cursor: pointer;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    margin-top: 40px;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Прочитай мои мысли</h1>
-  </header>
+<div id="passwordBox">
+  <input type="password" id="passwordInput" placeholder="Введите пароль">
+  <br>
+  <button onclick="checkPassword()">Войти</button>
+</div>
 
-  <section class="track">
-    <h2>88-98</h2>
-    <audio controls>
-      <source src="88-98.mp3" type="audio/mpeg">
-      Твой браузер не поддерживает аудио.
-    </audio>
-  </section>
+<div id="content">
+  <h1>88-98</h1>
 
-  <section class="track">
-    <h2>Прочитай мои мысли</h2>
-    <audio controls>
-      <source src="Прочитай мои мысли.mp3" type="audio/mpeg">
-      Твой браузер не поддерживает аудио.
-    </audio>
-  </section>
+  <audio controls>
+    <source src="88-98.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
 
-  <section class="notes">
-    <h3>Заметки</h3>
-    <p>
-Закажу моральный кодекс для тебя  
-Закажу закрытый космос для тебя  
-Жаль что наша жизнь это не караоке  
-Где если забыл слова то прочитаешь строки  
+  <audio controls>
+    <source src="66.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
 
-Бегущие от реальности  
-Прячущиеся за гранью экрана  
-Но все же в одной тональности…  
-Так мало мне надо, всё время мало  
+  <h2>ЗАМЕТКИ</h2>
+  <pre>
+Закажу моральный кодекс для тебя
+Закажу закрытый космос для тебя
+Жаль что наша жизнь это не караоке
+Где если забыл слова то прочитаешь строки
 
-Когда вдруг исчезнут четверг или вторник  
-Я с заботой прикрою надежду  
-И исчезну, как тени исчезнут в полдень  
-И больше не буду прежним  
+Бегущие от реальности
+Прячущиеся за гранью экрана
+Но все же в одной тональности…
+Так мало мне надо, всё время мало
 
-В темной комнате тихо тлеет сознание  
-Это мой маленький мир  
-Здесь мысли лежат и воспоминания  
-Здесь я делаю то что решил  
+Когда вдруг исчезнут четверг или вторник
+Я с заботой прикрою надежду
+И изчезну, как тени изчезнут в полдень
+И больше не буду прежним
 
-Запущу свои мысли от реальности  
-Пускай скроются за гранью экрана  
-В поисках спектакля и декораций  
-И заветной ложки том яма  
+В темной комнате тихо тлеет сознание 
+Это мой маленький мир
+Здесь мысли лежат и воспоминания 
+Здесь я делаю то что решил
 
-Луна только ночью такая реальная  
-И хочется до неё достать  
-Ты для меня недосягаемая  
-Но я хочу с тобой танцевать  
+Запущу свои мысли от реальности
+Пускай скроются за гранью экрана
+В поисках спектакля и декораций
+И заветной ложки том яма
 
-Беру альт там твой смычок  
-Просыпаюсь в голове о тебе строчки  
-И не думаю вроде уже не о чем  
-Открываю блокнот там твой почерк  
+Луна только ночью такая реальная
+И хочется до неё достать
+Ты для меня недосягаемая 
+Но я хочу с тобой танцевать
 
-... (сюда можешь вставить остальной текст полностью)
-    </p>
-  </section>
+... (далее весь твой текст без изменений)
+  </pre>
+</div>
 
-  <footer>© Шурик Пашков</footer>
-
-  <script>
-    const password = prompt("Введите пароль:");
+<script>
+  function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
     if (password === "88-98") {
-      document.body.style.display = "block";
+      document.getElementById("passwordBox").style.display = "none";
+      document.getElementById("content").style.display = "block";
     } else {
-      document.body.innerHTML = "<div class='error'>Неверный пароль</div>";
+      alert("Неверный пароль");
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
