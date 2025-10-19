@@ -1,103 +1,150 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>88-98</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #eee;
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    input[type="password"] {
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      outline: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-    button {
-      padding: 10px 20px;
-      margin-left: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      background-color: #f5b342;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #d99c2f;
-    }
-    .content {
-      display: none;
-      margin-top: 30px;
-    }
-    audio {
-      margin: 15px 0;
-      width: 90%;
-      max-width: 500px;
-    }
-    .poetry {
-      margin-top: 40px;
-      padding: 20px;
-      border-top: 1px solid #333;
-      text-align: left;
-      line-height: 1.6;
-      white-space: pre-line;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .poetry h2 {
-      color: #f5b342;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>88-98</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b0b0b;
+    color: #f2f2f2;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #888;
+  }
+  h2 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    margin-top: 50px;
+    color: #ddd;
+  }
+  audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.05em;
+    margin-top: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+  .fade {
+    animation: fadeIn 2s ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .password-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    color: #fff;
+  }
+  input[type="password"] {
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    outline: none;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  button {
+    margin-top: 10px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #444;
+  }
+</style>
 </head>
 <body>
-  <h1>Вход</h1>
-  <p>Введите пароль для доступа:</p>
-  <input type="password" id="password" placeholder="Пароль">
+
+<div id="passwordScreen" class="password-screen">
+  <h1>Вход на сайт</h1>
+  <p>Введите код доступа</p>
+  <input type="password" id="passwordInput" placeholder="••••••">
   <button onclick="checkPassword()">Войти</button>
+  <p id="error" style="color:#f66; margin-top:10px;"></p>
+</div>
 
-  <div class="content" id="content">
-    <h2>Tracks</h2>
+<div id="mainContent" class="hidden fade">
+  <div class="container">
+    <h1>88-98</h1>
 
-    <p><strong>88-98</strong></p>
+    <h2>Музыка</h2>
+    <p>🎧 88-98</p>
     <audio controls>
       <source src="88-98.mp3" type="audio/mpeg">
-          </audio>
+      Ваш браузер не поддерживает аудио.
+    </audio>
 
-    <source src="Prochitai-moi-mysli.mp3" type="audio/mpeg">
-     </audio>
+    <p>🎧 Прочитай мои мысли</p>
+    <audio controls>
+      <source src="Прочитай мои мысли.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудио.
+    </audio>
 
-    <div class="poetry">
-      <h2>Zametki</h2>
-      <p>
+    <h2>Заметки</h2>
+    <pre>
+Закажу моральный кодекс для тебя
+Закажу закрытый космос для тебя
+Жаль что наша жизнь это не караоке
+Где если забыл слова то прочитаешь строки
 
-
-      </p>
-    </div>
+Бегущие от реальности
+Прячущиеся за гранью экрана
+Но все же в одной тональности…
+Так мало мне надо, всё время мало
+...
+(все твои стихи здесь)
+...
+Я бы хотел стать твоим домом
+Теплым уютным добрым
+    </pre>
   </div>
+</div>
 
-  <script>
-    function checkPassword() {
-      const pass = document.getElementById("password").value;
-      if (pass === "88-98") {
-        document.getElementById("content").style.display = "block";
-        document.querySelector("h1").style.display = "none";
-        document.querySelector("p").style.display = "none";
-        document.querySelector("input").style.display = "none";
-        document.querySelector("button").style.display = "none";
-      } else {
-        alert("Неверный пароль!");
-      }
-    }
-  </script>
+<script>
+function checkPassword() {
+  const input = document.getElementById("passwordInput").value.trim();
+  const correct = "88-98";
+  if (input === correct) {
+    document.getElementById("passwordScreen").style.display = "none";
+    document.getElementById("mainContent").classList.remove("hidden");
+  } else {
+    document.getElementById("error").textContent = "Неверный код.";
+  }
+}
+</script>
+
 </body>
 </html>
